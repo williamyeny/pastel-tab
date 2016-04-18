@@ -3,7 +3,7 @@ var hex;
 var clip;
 var auto;
 var speed;
-var changing = false;
+var looping = false;
 
 $(document).ready(function() {
   
@@ -31,7 +31,7 @@ $(document).ready(function() {
   $('#gen').click(function(e) {
     e.preventDefault();
     if (!auto) {
-      if (!changing) {
+      if (!looping) {
         changeColor(); //if it's on manual, just change
       }
     } else {
@@ -47,11 +47,11 @@ $(document).ready(function() {
   $('#tog').click(function(e) {
     e.preventDefault();
     auto = !auto; //invert auto 
-    setValues();
+    setValues(); //save values to Chrome
     updateButtons();
   });
   
-  clip.on('success', function(e) {
+  clip.on('success', function(e) { //on finish copy
     $('#text').addClass('copied');
   });
 });
@@ -63,11 +63,12 @@ function updateButtons() {
   } else {
     $('#tog').html('manual');
     $('#gen').html('speed: ' + speed);
-    console.log(speed);
-    if (!changing) {
+    
+    //start loop
+    if (!looping) {
+      looping = true;
       changeColor();
-      changing = true;
-    }
+    } 
   }
 }
 
@@ -85,12 +86,18 @@ function changeColor() {
   $('#text').html(hex); //set text
   $('#text').removeClass('copied'); //clear ' - copied'
   
-  //auto-generate colors
-  setTimeout(function() {
-    if (auto) {
-      changeColor();
-    } else {
-      changing = false;
-    }
-  }, speed*1000);
+  //auto-generate colors is option is enabled
+  if (auto) { 
+    setTimeout(function() {
+      
+      if (auto) {
+        changeColor(); 
+      } else {
+        looping = false;
+      }
+      
+    }, speed*1000);
+  } else {
+    looping = false;
+  }
 }
