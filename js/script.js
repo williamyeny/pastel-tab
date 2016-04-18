@@ -9,11 +9,23 @@ $(document).ready(function() {
   //setup copy
   clip = new Clipboard('#text');
   
-  //setup auto 
-  auto = false;
-  speed = 1;
-  
   changeColor();
+  
+  //default values
+  auto = false;
+  speed = 3;
+  
+  //setup stored variables
+  chrome.storage.sync.get('auto', function(data) {
+    auto = data.auto || auto;
+    console.log(auto);
+    updateButtons();
+  });
+
+  chrome.storage.sync.get('speed', function(data) {
+    speed = data.speed || speed;
+    updateButtons();
+  })
   
   $('#gen').click(function(e) {
     e.preventDefault();
@@ -25,27 +37,38 @@ $(document).ready(function() {
       }
       speed++;
       $('#gen').html('speed: ' + speed);
+      setValues();
     }
   });
 
   $('#tog').click(function(e) {
     e.preventDefault();
-    if (auto) {
-      $('#tog').html('auto');
-      $('#gen').html('generate');
-      auto = false;
-    } else {
-      $('#tog').html('manual');
-      $('#gen').html('speed: '+ speed);
-      auto = true;
-      changeColor();
-    }
+    auto = !auto; //invert auto 
+    setValues();
+    updateButtons();
   });
   
   clip.on('success', function(e) {
     $('#text').addClass('copied');
   });
 });
+
+function updateButtons() {
+  if (!auto) {
+    $('#tog').html('auto');
+    $('#gen').html('generate');
+  } else {
+    $('#tog').html('manual');
+    $('#gen').html('speed: ' + speed);
+    console.log(speed);
+    changeColor();
+  }
+}
+
+function setValues() {
+  chrome.storage.sync.set({'auto': auto });
+  chrome.storage.sync.set({'speed': speed });
+}
 
 function changeColor() {
   col = parseInt(Math.random() * 360); //randomize color
