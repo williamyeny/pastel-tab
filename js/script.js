@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
   
   clip.on('success', function(e) {
-    $('#text').html(hex + ' - copied');
+    $('#text').addClass('copied');
   });
 });
 
@@ -25,4 +25,5 @@ function changeColor() {
   
   hex = '#' + tinycolor('hsl(' + col + ', 100%, 90%)').toHex(); //translate to hex
   $('#text').html(hex); //set text
+  $('#text').removeClass('copied'); //clear ' - copied'
 }

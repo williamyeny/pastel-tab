@@ -25,6 +25,11 @@ a:hover {
   cursor:pointer;
 }
 
+.copied::after {
+  content: ' - copied';
+  overflow:hidden;
+}
+
 .button {
   margin-top:25px;
   display:inline-block;
