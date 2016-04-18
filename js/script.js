@@ -3,6 +3,7 @@ var hex;
 var clip;
 var auto;
 var speed;
+var changing = false;
 
 $(document).ready(function() {
   
@@ -30,7 +31,9 @@ $(document).ready(function() {
   $('#gen').click(function(e) {
     e.preventDefault();
     if (!auto) {
-      changeColor(); //if it's on manual, just change
+      if (!changing) {
+        changeColor(); //if it's on manual, just change
+      }
     } else {
       if (speed == 5) { //max speed value
         speed = 0;
@@ -61,7 +64,10 @@ function updateButtons() {
     $('#tog').html('manual');
     $('#gen').html('speed: ' + speed);
     console.log(speed);
-    changeColor();
+    if (!changing) {
+      changeColor();
+      changing = true;
+    }
   }
 }
 
@@ -83,6 +89,8 @@ function changeColor() {
   setTimeout(function() {
     if (auto) {
       changeColor();
+    } else {
+      changing = false;
     }
   }, speed*1000);
 }
