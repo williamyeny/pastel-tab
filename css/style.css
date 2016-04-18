@@ -26,6 +26,7 @@ a:hover {
 
 .button {
   margin-top:25px;
+  display:inline-block;
 }
 
 #center {
@@ -35,7 +36,7 @@ a:hover {
   top:50%;
   text-align: center;
   margin-left:-150px;
-  margin-top:-30px;
+  margin-top:-35px;
 }
 
 body {
