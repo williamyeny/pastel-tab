@@ -1,6 +1,12 @@
 #pastel-tab
 Get a new pastel color every time you open a new tab! This Chrome extension also lets you cycle through colors automatically with a customizable speed.
 
+![image1](http://i.imgur.com/zHuPOEP.png)
+
+![image2](http://i.imgur.com/K4ObUlF.png)
+
+![image3](http://i.imgur.com/EZPvsCB.png)
+
 This project is inspired by [automatic pastels](http://automaticpastels.tumblr.com/).
 
 ##installation
