@@ -55,7 +55,14 @@ $(document).ready(function() {
   clip.on('success', function(e) { //on finish copy
     $('#text').addClass('copied');
   });
+  
+  clock();
 });
+
+function clock() {
+  $('#clock').html(moment().format('h:mm A'));
+  setTimeout(function() { clock(); }, 500);
+}
 
 function updateButtons() {
   if (!auto) {

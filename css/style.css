@@ -40,9 +40,14 @@ a:hover {
   top:50%;
   text-align: center;
   margin-left:-150px;
-  margin-top:-50px;
+  margin-top:-65px;
 }
 
 body {
   transition-duration:1s;
+}
+
+#clock {
+  font-size:20px;
+  margin-bottom:15px;
 }
