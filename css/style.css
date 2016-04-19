@@ -7,6 +7,10 @@
   color:#333333;
 }
 
+.hide {
+  display:none;
+}
+
 a {
   font-size: 14px;  
   padding:10px 20px 10px 20px;
@@ -15,11 +19,12 @@ a {
   transition-duration: 0.5s;
   text-decoration: none;
   color:#333333;
+  
 }
 
-.material-icons { 
-  vertical-align: middle; 
+.material-icons {
   font-size: 14px;
+  vertical-align: text-bottom; /* center icon. Don't ask my how this works because I don't know either */
 }
 
 a:hover {

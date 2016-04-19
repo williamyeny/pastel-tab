@@ -56,6 +56,11 @@ $(document).ready(function() {
     $('#text').addClass('copied');
   });
   
+  $('#clock-tog').click(function(e) {
+    e.preventDefault();
+    $('#clock').toggleClass('hide');
+  });
+  
   clock();
 });
 
