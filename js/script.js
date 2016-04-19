@@ -4,6 +4,7 @@ var clip;
 var auto;
 var speed;
 var looping = false;
+var lightness = "95%";
 
 $(document).ready(function() {
   
@@ -80,9 +81,9 @@ function setValues() {
 function changeColor() {
   col = parseInt(Math.random() * 360); //randomize color
 
-  $('body').css('background-color', 'hsla(' + col + ', 100%, 90%, 1)'); //set color
+  $('body').css('background-color', 'hsl(' + col + ', 100%, ' + lightness + ')'); //set color
   
-  hex = '#' + tinycolor('hsl(' + col + ', 100%, 90%)').toHex(); //translate to hex
+  hex = '#' + tinycolor('hsl(' + col + ', 100%, ' + lightness + ')').toHex(); //translate to hex
   $('#text').html(hex); //set text
   $('#text').removeClass('copied'); //clear ' - copied'
   
