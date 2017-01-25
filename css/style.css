@@ -61,6 +61,11 @@ body {
   transition-duration:1s;
 }
 
+#clock-tog {
+  padding-left:15px;
+  padding-right:15px;
+}
+
 #clock {
   font-size:20px;
   margin-bottom:15px;
