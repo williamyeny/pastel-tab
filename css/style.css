@@ -12,13 +12,18 @@
 }
 
 a {
-  font-size: 14px;  
+  font-size: 14px;
   padding:10px 20px 10px 20px;
   border-width:1px;
   border-style: solid;
   transition-duration: 0.5s;
   text-decoration: none;
   color:#333333;
+}
+
+#auto-check {
+  margin-left:-4px;
+  margin-right:2px;
 }
 
 .material-icons {
