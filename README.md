@@ -6,5 +6,5 @@ This project is inspired by [automatic pastels](http://automaticpastels.tumblr.c
 ##installation
 [Install this extension from the Chrome Web Store!](https://chrome.google.com/webstore/detail/pastel-tab/olbihpfkfhmeonjellidnieandnfaapd)
 
-You can test this out by going to `chrome://extensions` in Chrome, enable Developer Mode, hit "Load unpacked extension" and opening the project folder.
+Alternatively, you can test the files in here directly by going to `chrome://extensions` in Chrome, enable Developer Mode, hit "Load unpacked extension" and opening the project folder you cloned.
 
