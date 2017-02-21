@@ -1,18 +1,18 @@
 {
   "manifest_version": 2,
-  "name": "pastel-tab",
-  "version": "0.1",
-  
+  "name": "Pastel Tab",
+  "version": "1.0",
+
   "chrome_url_overrides" : {
     "newtab": "index.html"
   },
-  
-  "icons": { 
+
+  "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
-    "128": "icon128.png" 
+    "128": "icon128.png"
   },
-  
+
   "permissions": [
     "storage"
   ]
