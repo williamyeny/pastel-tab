@@ -20,7 +20,6 @@ $(document).ready(function() {
   //setup stored variables
   chrome.storage.sync.get('auto', function(data) {
     auto = data.auto || auto;
-    console.log(auto);
     updateButtons();
   });
 
