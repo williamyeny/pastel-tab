@@ -39,7 +39,7 @@ $(document).ready(function() {
         speed = 0;
       }
       speed++;
-      $('#gen').html('speed: ' + speed);
+      setSpeedBars();
       setValues();
     }
   });
@@ -74,7 +74,8 @@ function updateButtons() {
     $('#gen').html('generate');
   } else {
     $('#auto-check').html('check');
-    $('#gen').html('speed: ' + speed);
+
+    setSpeedBars();
 
     //start loop
     if (!looping) {
@@ -82,6 +83,12 @@ function updateButtons() {
       changeColor();
     }
   }
+}
+
+function setSpeedBars() {
+  var sbars = "|";
+  sbars = sbars.repeat(speed);
+  $('#gen').html('speed: ' + sbars);
 }
 
 function setValues() {
@@ -108,7 +115,7 @@ function changeColor() {
         looping = false;
       }
 
-    }, speed*1000);
+    }, (6 - speed)*1000);
   } else {
     looping = false;
   }
